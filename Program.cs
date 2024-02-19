@@ -1,6 +1,4 @@
-﻿using System.Data;
-
-Console.WriteLine(@"Witaj w grze Mastermind!
+﻿Console.WriteLine(@"Witaj w grze Mastermind!
         Twoim zadaniem jest odgadnięcie sekwencji liczb.
         Wprowadź cztery liczby z zakresu od 1 do 10.
         Po każdej próbie komputer podsumuje twoje odpowiedzi i zwróci podpowiedź, na podstawie której możesz odgadnąć poprawne ustawienie liczb.
