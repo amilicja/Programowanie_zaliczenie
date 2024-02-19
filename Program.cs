@@ -1,4 +1,6 @@
-﻿Console.WriteLine(@"Witaj w grze Mastermind!
+﻿using System.Data;
+
+Console.WriteLine(@"Witaj w grze Mastermind!
 Twoim zadaniem jest odgadnięcie sekwencji liczb.
 Wprowadź cztery liczby z zakresu od 1 do 10.
 Po każdej próbie komputer podsumuje twoje odpowiedzi i zwróci podpowiedź, na podstawie której możesz odgadnąć poprawne ustawienie liczb.
@@ -39,4 +41,22 @@ for (int i = 0; i < 4; i++)
             int guess = takeInGuess();
             playerGuessTable.Add(guess);
         }
-Console.WriteLine(playerGuessTable[1]);
+
+List<int> summaryTable = new List<int>();
+int n = 0;
+while (!summaryTable.SequenceEqual(new List<int> { 2, 2, 2, 2 }))
+    {
+        if (playerGuessTable[n] == scoreTable[n])
+        {
+            summaryTable.Add(2);
+        }
+        else if (scoreTable.Contains(playerGuessTable[n]))
+        {
+            summaryTable.Add(1);
+        }
+        else
+        {
+           summaryTable.Add(0); 
+        }
+        n++;
+    }
